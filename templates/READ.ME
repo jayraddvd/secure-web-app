@@ -1,0 +1,137 @@
+# Secure Web Application
+
+A security-focused web application built with Python, Flask, and SQLite.
+
+This project demonstrates secure authentication and common web application security controls.
+
+## Features
+
+- User registration
+- User login
+- Protected dashboard
+- Logout functionality
+- Flash messages
+- Responsive interface
+
+## Security Features
+
+- Password hashing with Werkzeug
+- SQL injection prevention using parameterized queries
+- CSRF protection
+- Secure session cookies
+- HTTP security headers
+- Login rate limiting
+- Server-side input validation
+- Custom error pages
+
+## Technologies
+
+- Python
+- Flask
+- SQLite
+- HTML
+- CSS
+- Flask-WTF
+- Flask-Limiter
+- Git
+- GitHub
+
+## Project Structure
+
+```text
+secure-web-app/
+├── app.py
+├── requirements.txt
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
+├── static/
+│   └── style.css
+├── templates/
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   └── 429.html
+├── database/
+│   └── database.py
+└── screenshots/
+```
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jayraddvd/secure-web-app.git
+```
+
+Enter the project folder:
+
+```bash
+cd secure-web-app
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```powershell
+.venv\Scripts\activate
+```
+
+Install the required packages:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Create the database:
+
+```bash
+python database/database.py
+```
+
+Run the application:
+
+```bash
+python app.py
+```
+
+Open this address in a browser:
+
+```text
+http://127.0.0.1:5000
+```
+
+## What I Learned
+
+- How to build authentication with Flask
+- How to hash passwords before storing them
+- How to prevent SQL injection
+- How to protect forms from CSRF
+- How to manage authenticated sessions
+- How to configure browser security headers
+- How to slow brute-force login attempts
+- How to work with SQLite and GitHub
+
+## Future Improvements
+
+- Security event logging
+- Admin security dashboard
+- User roles
+- Multi-factor authentication
+- Password reset
+- Automated tests
+- GitHub Actions
+- Docker deployment
+
+## Author
+
+Jarred David
+
+Computer Science — Cybersecurity Engineering
