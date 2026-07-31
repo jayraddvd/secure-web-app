@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Secure Web App</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <nav>
+        <h2>Secure Web App</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h1>Secure Dashboard</h1>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="message">
+                        <strong>{{ message }}</strong>
+                    </div>
+                {% endfor %}
+            {% endwith %}
+
+            <h2>Welcome, {{ username }}!</h2>
+
+            <p>
+                You successfully authenticated and gained access to a
+                protected page.
+            </p>
+
+            <p>
+                Your password is stored as a secure hash, your session tracks
+                your login, and your forms are protected with CSRF tokens.
+            </p>
+
+            <a class="button secondary-button" href="/logout">
+                Logout
+            </a>
+        </section>
+    </main>
+</body>
+</html>

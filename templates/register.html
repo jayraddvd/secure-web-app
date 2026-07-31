@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Register | Secure Web App</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <nav>
+        <h2>Secure Web App</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h1>Create Account</h1>
+
+            <p>Create a secure account to access the dashboard.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="message">
+                        <strong>{{ message }}</strong>
+                    </div>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST" action="/register">
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token() }}"
+                >
+
+                <label for="username">Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Choose a username"
+                    minlength="3"
+                    maxlength="30"
+                    required
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Choose a password"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p class="page-link">
+                Already have an account?
+                <a href="/login">Log in here</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

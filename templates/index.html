@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Secure Web App</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <nav>
+        <h2>Secure Web App</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h1>Welcome to the Secure Web App</h1>
+
+            <p>
+                A security-focused Flask application featuring protected
+                authentication, password hashing, secure sessions, input
+                validation, and CSRF protection.
+            </p>
+
+            <a class="button" href="/login">
+                Login
+            </a>
+
+            <a class="button secondary-button" href="/register">
+                Create Account
+            </a>
+        </section>
+    </main>
+</body>
+</html>
